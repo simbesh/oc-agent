@@ -47,6 +47,7 @@ cat .env.github-app.example
 - `GH_TOKEN` or GitHub App credentials
 - model/provider values and matching provider key(s)
 - optionally `WORKSPACE_DIR` to use a specific absolute host path
+- optionally `GH_CONFIG_DIR` to persist `gh` auth in a host folder (for example `appdata/oc-agent/gh`)
 
 3. Start stack:
 
@@ -173,6 +174,11 @@ Tip: for git pushes with token-based auth, repo remotes should be HTTPS (not SSH
 - If `WORKSPACE_DIR` is not set, Compose uses a persistent named volume `workspace`.
 - Service entrypoints explicitly `cd` into `/workspace` (or `OPENCODE_WORKSPACE_ROOT` if set)
   so sessions default there instead of `/`.
+
+`gh` config is also mounted to `/home/opencode/.config/gh` by default via:
+
+- `GH_CONFIG_DIR` if set
+- otherwise `appdata/oc-agent/gh`
 
 Clone repos either on host into that folder, or from inside container:
 

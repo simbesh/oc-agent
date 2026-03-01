@@ -13,6 +13,7 @@ services:
     working_dir: /workspace
     volumes:
       - opencode-home:/home/opencode
+      - ${GH_CONFIG_DIR:-appdata/oc-agent/gh}:/home/opencode/.config/gh
       - ${WORKSPACE_DIR:-workspace}:/workspace
     command: ["/usr/local/bin/opencode-entrypoint.sh"]
     healthcheck:
