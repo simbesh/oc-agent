@@ -7,6 +7,7 @@ This workspace is used by OpenCode through a Telegram interface.
 - Operate as a single-user homelab coding agent.
 - Use `gh` CLI for GitHub operations (issues, comments, PRs).
 - Work inside `/workspace` repos only.
+- If current directory is `/`, switch to `/workspace` before running any commands.
 
 ## Safety rules
 
