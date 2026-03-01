@@ -13,6 +13,7 @@ This is intentionally a small "mini OpenClaw" style setup without the full OpenC
 
 - `opencode` service: runs `opencode serve` and authenticates `gh` from GitHub App creds or `GH_TOKEN`
 - `telegram-bot` service: forwards Telegram prompts to OpenCode over Docker network
+- `bun` is installed in the image so the agent can run Bun-based project commands
 - Image default command runs both processes in one container for single-container platforms (for example unRAID)
 - Persistent state volumes for OpenCode and the bot
 - Workspace data at `/workspace` (host bind via `WORKSPACE_DIR` or default named volume)
@@ -279,6 +280,6 @@ If package publishing is blocked, verify repository settings allow GitHub Action
 ## Files
 
 - `docker-compose.yml`: service topology, healthchecks, volumes
-- `docker/Dockerfile`: runtime image with `opencode`, `opencode-telegram`, `gh`
+- `docker/Dockerfile`: runtime image with `opencode`, `opencode-telegram`, `gh`, `bun`
 - `docker/opencode-entrypoint.sh`: `gh` login + OpenCode server startup
 - `docker/telegram-bot-entrypoint.sh`: startup checks + bot launch

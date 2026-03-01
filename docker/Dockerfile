@@ -6,8 +6,14 @@ RUN apt-get update \
         curl \
         git \
         gh \
+        unzip \
         tini \
     && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://bun.sh/install | bash \
+    && install -m 755 /root/.bun/bin/bun /usr/local/bin/bun \
+    && ln -sf /usr/local/bin/bun /usr/local/bin/bunx \
+    && rm -rf /root/.bun
 
 RUN npm install -g opencode-ai @grinev/opencode-telegram-bot
 
