@@ -35,6 +35,8 @@ services:
       - .env
     environment:
       OPENCODE_API_URL: http://opencode:4096
+      OPENCODE_WORKSPACE_ROOT: /workspace
+    working_dir: /workspace
     depends_on:
       opencode:
         condition: service_healthy

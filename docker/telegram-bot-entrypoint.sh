@@ -12,9 +12,13 @@ if [[ -z "${TELEGRAM_ALLOWED_USER_ID:-}" ]]; then
 fi
 
 opencode_api_url="${OPENCODE_API_URL:-http://127.0.0.1:4096}"
+workspace_root="${OPENCODE_WORKSPACE_ROOT:-/workspace}"
 
 runtime_home="${OPENCODE_TELEGRAM_HOME:-${HOME}/.config/opencode-telegram-bot}"
 runtime_env_file="${runtime_home}/.env"
+
+mkdir -p "${workspace_root}"
+cd "${workspace_root}"
 
 export OPENCODE_TELEGRAM_HOME="${runtime_home}"
 export OPENCODE_API_URL="${opencode_api_url}"

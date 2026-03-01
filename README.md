@@ -171,6 +171,8 @@ Tip: for git pushes with token-based auth, repo remotes should be HTTPS (not SSH
 
 - If `WORKSPACE_DIR` is set, Compose uses that host path.
 - If `WORKSPACE_DIR` is not set, Compose uses a persistent named volume `workspace`.
+- Service entrypoints explicitly `cd` into `/workspace` (or `OPENCODE_WORKSPACE_ROOT` if set)
+  so sessions default there instead of `/`.
 
 Clone repos either on host into that folder, or from inside container:
 

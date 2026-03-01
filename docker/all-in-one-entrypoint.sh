@@ -3,9 +3,14 @@ set -euo pipefail
 
 hostname="${OPENCODE_SERVER_HOSTNAME:-0.0.0.0}"
 port="${OPENCODE_SERVER_PORT:-4096}"
+workspace_root="${OPENCODE_WORKSPACE_ROOT:-/workspace}"
 
 export OPENCODE_SERVER_HOSTNAME="${hostname}"
 export OPENCODE_SERVER_PORT="${port}"
+export OPENCODE_WORKSPACE_ROOT="${workspace_root}"
+
+mkdir -p "${workspace_root}"
+cd "${workspace_root}"
 
 if [[ -z "${OPENCODE_API_URL:-}" ]]; then
   export OPENCODE_API_URL="http://127.0.0.1:${port}"
