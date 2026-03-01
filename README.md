@@ -88,6 +88,8 @@ Notes:
 
 - `OPENCODE_API_URL` defaults to `http://127.0.0.1:4096` in single-container mode.
 - `WORKSPACE_DIR` is only used by `docker-compose.yml`; in unRAID, path mappings control mounts directly.
+- Container startup writes `/home/opencode/.config/opencode-telegram-bot/.env` from env vars,
+  so the Telegram bot skips the interactive config wizard (no TTY needed).
 
 ## GitHub App setup (before first container start)
 
