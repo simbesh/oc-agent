@@ -219,7 +219,7 @@ Configure these env vars in `.env`:
 - `GITHUB_APP_INSTALLATION_ID`
 - `GITHUB_APP_PRIVATE_KEY` (or `GITHUB_APP_PRIVATE_KEY_B64`)
 
-At startup, `opencode` mints an installation token and exports it as `GH_TOKEN` for all `gh` commands. See the full setup walkthrough above.
+At startup, `opencode` mints an installation token and exports it as `GH_TOKEN`. The image also wraps `gh` so each `gh` command refreshes the token automatically when GitHub App credentials are present. See the full setup walkthrough above.
 
 Typical GitHub App permissions for this workflow:
 

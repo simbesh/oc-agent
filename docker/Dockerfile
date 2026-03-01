@@ -17,8 +17,9 @@ COPY docker/opencode-entrypoint.sh /usr/local/bin/opencode-entrypoint.sh
 COPY docker/telegram-bot-entrypoint.sh /usr/local/bin/telegram-bot-entrypoint.sh
 COPY docker/all-in-one-entrypoint.sh /usr/local/bin/all-in-one-entrypoint.sh
 COPY docker/github-app-token.mjs /usr/local/bin/github-app-token.mjs
+COPY docker/gh-wrapper.sh /usr/local/bin/gh
 
-RUN chmod +x /usr/local/bin/opencode-entrypoint.sh /usr/local/bin/telegram-bot-entrypoint.sh /usr/local/bin/all-in-one-entrypoint.sh /usr/local/bin/github-app-token.mjs
+RUN chmod +x /usr/local/bin/opencode-entrypoint.sh /usr/local/bin/telegram-bot-entrypoint.sh /usr/local/bin/all-in-one-entrypoint.sh /usr/local/bin/github-app-token.mjs /usr/local/bin/gh
 
 USER opencode
 ENV HOME=/home/opencode
