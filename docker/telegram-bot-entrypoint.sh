@@ -11,7 +11,7 @@ if [[ -z "${TELEGRAM_ALLOWED_USER_ID:-}" ]]; then
   exit 1
 fi
 
-opencode_api_url="${OPENCODE_API_URL:-http://opencode:4096}"
+opencode_api_url="${OPENCODE_API_URL:-http://127.0.0.1:4096}"
 
 for _ in {1..60}; do
   if curl -fsS "${opencode_api_url}/global/health" >/dev/null 2>&1; then
